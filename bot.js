@@ -29,6 +29,17 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
+client.on('guildMemberAdd', member => {
+    const botCount = member.guild.members.filter(m=>m.user.bot).size
+    const memberCount = [member.guild.memberCount] - [botCount]
+    client.channels.get('472718413689520129').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+});
+
+client.on('guildMemberRemove', member => {
+    const botCount = member.guild.members.filter(m=>m.user.bot).size
+    const memberCount = [member.guild.memberCount] - [botCount]
+    client.channels.get('472718413689520129').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+});
 
 
 client.on('voiceStateUpdate', (old, now) => {
