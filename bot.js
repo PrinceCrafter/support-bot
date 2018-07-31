@@ -29,6 +29,8 @@ client.on("guildMemberAdd", member => {
 }).catch(console.error)
 })
 
+
+
 client.on('voiceStateUpdate', (old, now) => {
   const channel = client.channels.get('473813274383613963');
   const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
