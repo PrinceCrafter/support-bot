@@ -20,6 +20,15 @@ j = 1;
     
 });
 
+
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
+:crown:اسم العضو  ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
+
 client.on('voiceStateUpdate', (old, now) => {
   const channel = client.channels.get('473813274383613963');
   const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
