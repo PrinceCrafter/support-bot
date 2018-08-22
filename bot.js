@@ -4,7 +4,7 @@ const prefix = "^";
 
 client.on('ready', function(){    
     var ms = 40000 ;    
-    var setGame = ['Jungle | 1.4k Member'];    
+    var setGame = ['Snow Network '];    
     var i = -1;    
     var j = 0;    
     setInterval(function (){    
@@ -130,12 +130,12 @@ client.on('guildMemberAdd', member => {
 client.on('guildMemberRemove', member => {
     const botCount = member.guild.members.filter(m=>m.user.bot).size
     const memberCount = [member.guild.memberCount] - [botCount]
-    client.channels.get('472718413689520129').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
+    client.channels.get('481859683896918055').setName(`⟫『 ${memberCount} عدد الاعضاء 』⟪`);
 });
 
 
 client.on('voiceStateUpdate', (old, now) => {
-  const channel = client.channels.get('473813274383613963');
+  const channel = client.channels.get('481859803769995264');
   const currentSize = channel.guild.members.filter(m => m.voiceChannel).size;
   const size = channel.name.match(/\[\s(\d+)\s\]/);
   if (!size) return channel.setName(`Voice Online: ${currentSize}`);
