@@ -21,12 +21,6 @@ channel.send(`نوفرج نوفرج نوفرج نوفرج نوفرج نوفرج 
 
 
 
-client.on('message', message => {
-    if(message.content === '7wl'){
-        message.channel.send('#credit @!PrinceCrafter#0294')
-    }
-});
-
 
 
 
